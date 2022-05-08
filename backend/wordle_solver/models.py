@@ -1,3 +1,8 @@
+"""
+List of all words source: https://github.com/tabatkins/wordle-list
+Word frequency list source: https://www.kaggle.com/datasets/rtatman/english-word-frequency
+"""
+
 all_words = """
 women
 nikau
