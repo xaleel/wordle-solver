@@ -51,3 +51,19 @@
   ## Limitations:
   - Although the app is relatively responsive on mobile devices, it lacks some of the features offered on the pc version, such as automatic switching to the next input when writing and going back to the previous input when clicking backspace.
   - The algorithm used in the backend is not the best for this case, as sorting words by usage frequency instead of the possibility of any letter being in the nth position in the word is less optimal.
+
+  ## Try it yourself
+  - New Terminal
+  - `git clone https://github.com/xaleel/wordle-solver.git`
+  - `cd .\wordle-solver\backend\`
+  - `pip install pipenv`
+  - `pipenv shell`
+  - `pipenv install django djangorestframework django-cors-headers`
+  - `python manage.py runserver`
+  - New Terminal
+  - `cd .\wordle-solver\frontend\`
+  - `npm install react`
+  - `npm start`
+  #### Your copy of the site will be running on `http://localhost:3000` and `http://192.168.1.?:3000`
+    
+  Have fun!
