@@ -1,10 +1,11 @@
 # Wordle solver
 
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/XHds0p3BMFk
   
 ### Description:
   Wordle Solver is a web-based application that suggests words for the popular game Wordle.
   
+  ![preview](https://i.imgur.com/TIg2ckZ.png)
   
 ### Frameworks:
   Wordle Solver uses ReactJs on the front-end and Django on the backend. The backend handles data processing and receives guesses through an API, returning word suggestions to the frontend.
