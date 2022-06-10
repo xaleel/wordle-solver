@@ -54,6 +54,8 @@
   - The algorithm used in the backend is not the best for this case, as sorting words by usage frequency instead of the probability of any letter being in the nth position in the word is less optimal.
 
   ## Try it yourself
+  #### Live:  https://wordle-solv3r.herokuapp.com/
+  #### Or locally:
   - New Terminal
   - `git clone https://github.com/xaleel/wordle-solver.git`
   - `cd .\wordle-solver\backend\`
