@@ -1,11 +1,19 @@
+import { range } from 'express/lib/request'
+import React from 'react'
+
 export default function Suggestions(props){
-    return (
-        <ol>
-          <li id='s1'>{props.words[0]}</li>
-          <li id='s2'>{props.words[1]}</li>
-          <li id='s3'>{props.words[2]}</li>
-          <li id='s4'>{props.words[3]}</li>
-          <li id='s5'>{props.words[4]}</li>
-        </ol>
+  let suggestedWords = []
+  for (let i = 0; i < props.words.length; i++){
+    suggestedWords.push(
+      <li id={`s${i + 1}`}>
+        {props.words[i]} 
+        <button className='insert' onClick={() => props.insert(props.words[i].toUpperCase())}>&gt;</button>
+      </li>
     )
+  }
+  return (
+      <ol>
+        {suggestedWords}
+      </ol>
+  )
 }
