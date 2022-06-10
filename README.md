@@ -1,6 +1,7 @@
 # Wordle solver
 
 #### Video Demo:  https://youtu.be/XHds0p3BMFk
+#### Live:  https://wordle-solv3r.herokuapp.com/
   
 ### Description:
   Wordle Solver is a web-based application that suggests words for the popular game Wordle.
