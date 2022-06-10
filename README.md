@@ -62,6 +62,7 @@
   - `pip install pipenv`
   - `pipenv shell`
   - `pipenv install django djangorestframework django-cors-headers`
+  - `python manage.py migrate`
   - `python manage.py runserver`
   - New Terminal
   - `cd .\wordle-solver\frontend\`
