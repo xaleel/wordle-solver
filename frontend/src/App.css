@@ -4,6 +4,31 @@
     grid-template-rows: 1fr 2fr !important;
   }
 }
+@media (min-width: 1500px) {
+  html{
+    font-size: 125%;
+  }
+}
+@media (min-width: 2000px) {
+  html{
+    font-size: 150%;
+  }
+}
+@media (min-width: 2500px) {
+  html{
+    font-size: 175%;
+  }
+}
+@media (min-width: 3000px) {
+  html{
+    font-size: 200%;
+  }
+}
+@media (min-width: 3500px) {
+  html{
+    font-size: 250%;
+  }
+}
 
 html{
   background: linear-gradient(to bottom right, rgb(53, 53, 65), rgb(107, 105, 129));
@@ -37,11 +62,11 @@ body{
 }
 
 .word{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
   position: relative;
+  row-gap: 0.1rem;
 }
 
 .letter{
@@ -69,6 +94,12 @@ ol{
   position: relative;
 }
 
+.right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .go{
   cursor: pointer;
   height: 2.75rem;
@@ -91,7 +122,7 @@ ol{
 }
 
 .lb{
-  width: calc(2.35rem + 1.4px);
+  width: calc(2rem + 1px);
   margin-right: 0.2rem;
   height: 0.75rem;
   font-size: 300%;
@@ -100,6 +131,8 @@ ol{
   cursor: pointer;
   line-height: 0;
   padding: 1px 2px;
+  caret-color: white;
+  box-sizing: content-box;
 }
 
 .lb:hover{
@@ -110,20 +143,28 @@ ol{
   outline: none;
 }
 
-#b1{
-  margin-left: 3px;
-}
-
 .gray{
   background-color: gray;
+}
+
+.lb.gray{
+  caret-color: gray;
 }
 
 .green{
   background-color: #79b851;
 }
 
+.lb.green{
+  caret-color: #79b851;
+}
+
 .yellow{
   background-color: #f3c237;
+}
+
+.lb.yellow{
+  caret-color: #f3c237;
 }
 
 .xtra{
@@ -144,6 +185,7 @@ ol{
   font-weight: bold;
   border-radius: 0.25rem;
   cursor: pointer;
+  font-size: calc((2vh + 2vw) / 2);
 }
 
 .reset:hover{
@@ -173,7 +215,8 @@ ol{
 .db{
   font-family: monospace;
   font-size: 300%;
-  width: calc(2.35rem + 1px);
+  width: calc(2rem + 1px);
+  box-sizing: content-box;
   text-align: center;
   margin-right: 0.2rem;
   margin-top: 0.5rem;
@@ -184,10 +227,61 @@ ol{
   outline: none;
 }
 
+.db.xtra{
+  margin-right: 0;
+}
+
 a{
   position: absolute;
   bottom: 2rem;
   right: 2rem;
   color: rgb(36, 36, 86);
   text-decoration: none;
+  font-size: calc((2.5vh + 2.5vw) / 2);;
+}
+
+a:hover{
+  filter: brightness(125%);
+}
+
+.no-dsp{
+  display: none;
+}
+
+.tip:hover{
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.insert{
+  margin-left: 0.5rem;
+  font-size: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  text-shadow: 2px 2px 8px black;
+}
+
+.insert:hover{
+  color: rgb(192, 250, 255);
+  opacity: 0.9;
+  cursor: pointer;
+  animation: rock 2s infinite ease-out;
+}
+
+@keyframes rock {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(25%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.input:disabled{
+  background-color: white;
 }
