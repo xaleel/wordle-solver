@@ -36,8 +36,8 @@
   
   Has 4 variables that determine how the word list is filtered into suggested words:
   1. _fxd_: fixed letters, i.e. green results. Limits to words strictly containing those letters in that exact position.
-  2. _nt_: letters not in the word, i.e. gray results. Limits to words not containing any of these letters in any other position.
-  3. _pos_: possible letters, i.e. yellow results. Limits to words containing those letters in any position.
+  2. _nt_: letters not in the word, i.e. gray results. Limits to words not containing any of these letters in any position.
+  3. _pos_: possible letters, i.e. yellow results. Limits to words containing those letters in any other position.
   4. _exc_: excluded letters. Used to deal with situations where the same letter appears more than once with different colors, e.g. once green and once gray.
     
   The `w_freq` function sorts the list of all possible words by their frequency (see models.py for credits). Following that, it returns only the top 5 most used words after filtering and sorting.
