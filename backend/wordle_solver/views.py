@@ -13,32 +13,32 @@ def solve(request, guesses):
 
 
 def wordle(wordlist, guesses):
-    fxd = [0 for i in range(len(list(wordlist)[0]))]
-    nt = {x: [] for x in range(len(list(wordlist)[0]))}
-    pos = []
-    exc = []
-    for g in guesses:
-        for i, l in enumerate(g[1]):
-            if l == "-" and g[0][i] not in exc and g[0][i] not in fxd:
-                exc.append(g[0][i])
+    fxd = [0 for i in range(len(list(wordlist)[0]))]     # fixed - exactly in that position
+    nt = {x: [] for x in range(len(list(wordlist)[0]))}  # not - definitely not in that position
+    pos = []                                             # possible - can be in other positions
+    exc = []                                             # excluded - cannot be in any position
+    for guess in guesses:  # guess => [letter, result], e.g. ["a", "G"]
+        for i, l in enumerate(guess[1]):
+            if l == "-" and guess[0][i] not in exc and guess[0][i] not in fxd:
+                exc.append(guess[0][i])
             elif l == "G":
-                fxd[i] = g[0][i]
+                fxd[i] = guess[0][i]
             elif l == "Y":
-                nt[i].append(g[0][i])
-                if g[0][i] not in pos:
-                    pos.append(g[0][i])
+                nt[i].append(guess[0][i])
+                if guess[0][i] not in pos:
+                    pos.append(guess[0][i])
     full = list(
         filter(
             lambda x: not False
             in [x.upper()[i] == y or y == 0 for i, y in enumerate(fxd)]
-            and not False in [x.upper().count(y) == fxd.count(y) for y in exc]
+            and not False in [y not in nt[i] for i, y in enumerate(x.upper())]
             and not False in [y in x.upper() for y in pos]
-            and not False in [y not in nt[i] for i, y in enumerate(x.upper())],
+            and not False in [x.upper().count(y) == fxd.count(y) for y in exc],
             wordlist,
         )
     )
 
-    def w_freq(w):
+    def w_freq(w):  # the lower the w_freq, the higher the frequency.
         if w.lower() in freq.keys():
             return freq[w.lower()]
         else:
